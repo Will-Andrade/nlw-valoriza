@@ -1,5 +1,13 @@
 # Dependency directories
 node_modules
+package.json
+yarn.lock
 
 # API Keys
 .env*
+
+# Database
+database.sqlite
+
+# Logs
+.log*
