@@ -7,6 +7,7 @@ import { CreateComplimentController } from "./controllers/CreateComplimentContro
 import { ensureAuthenticated } from "./middlewares/ensureAuthenticate";
 import { ListUserSentComplimentsController } from "./controllers/ListUserSentComplimentsController";
 import { ListUserReceivedComplimentsController } from "./controllers/ListUserReceivedComplimentsController";
+import { ListTagsController } from "./controllers/ListTagsController";
 
 const router = Router();
 
@@ -18,6 +19,7 @@ const listUserSentComplimentsController = new
     ListUserSentComplimentsController();
 const listUserReceivedComplimentsController = new
     ListUserReceivedComplimentsController();
+const listTagsController = new ListTagsController();
 
 router.post(
     "/tags", 
@@ -37,5 +39,6 @@ router.get(
     "/users/compliments/received", 
     listUserReceivedComplimentsController.handle
 );
+router.get("/tags", ensureAuthenticated, listTagsController.handle);
 
 export { router }
