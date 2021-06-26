@@ -8,7 +8,7 @@ class ListUserSentComplimentsService {
 
         const compliments = await complimentsRepositories.find({
             where: {
-                user_receiver: user_id
+                user_sender: user_id
             }
         })
 
